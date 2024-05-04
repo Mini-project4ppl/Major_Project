@@ -161,8 +161,8 @@ on the ImageNet dataset.
 9. Data Visualization:
 - matplotlib: A comprehensive library for creating static, animated, and
 interactive visualizations in Python.<br>
-## Module Description <br>
-### 1. CLAHE Algorithm
+# Module Description <br>
+## 1 CLAHE Algorithm
 CLAHE, which stands for Contrast Limited Adaptive Histogram Equalization,
 is a technique used to enhance the contrast and improve the overall quality of images.
 It's particularly useful in medical image processing, including the analysis of retinal
@@ -307,3 +307,50 @@ data collection, labelling, and retraining into the deployment pipeline to ensur
 the model remains effective over time.
 
 
+## 4 Densenet-201 Model <br>
+A 201-layer deep neural network, excels in image classification and object
+detection. It enhances information flow and feature reuse through dense blocks,
+fostering direct connections between layers for improved gradient flow. The
+architecture includes convolution, dense blocks with batch normalization and ReLU
+activation, and transition blocks for spatial dimension reduction. DenseNet-201 learns
+complex patterns effectively with pretraining on datasets like ImageNet for transfer
+learning. Supported in PyTorch and TensorFlow  <br>
+Layer structure of Densenet-201 Model: <br>
+- **Initial Layers:**
+1. Convolutional Layer: The first layer is usually a convolutional layer with a
+kernel size of 7x7 and stride. This layer extracts low-level features like edges
+and textures from the input image.
+2. Pooling Layer: A pooling layer (often max pooling) follows the convolutional
+layer to reduce the spatial dimensions (height and width) of the feature maps.
+This helps control overfitting and computational costs.
+3. Batch Normalization: Batch normalization layers are often placed after
+convolutional layers. They help stabilize the training process and improve
+gradient flow.<br>
+- **Dense Blocks:**
+DenseNet-201 typically consists of four dense blocks, each containing a
+sequence of convolutional layers. These blocks are the heart of the DenseNet
+architecture.
+1. Convolutional Layers: Within a dense block, each convolutional layer has a
+3x3 kernel size and applies a rectified linear unit (ReLU) activation function.
+The key aspect is that each layer receives the feature maps from all preceding
+layers in the block (dense connectivity). This promotes feature reuse and
+information flow.
+2. Growth Rate: A hyperparameter called the growth rate determines how
+many new feature maps are added by each convolutional layer in a dense
+block. This controls the model's capacity and allows for efficient growth in
+complexity.
+3. Batch Normalization and ReLU: Batch normalization and ReLU activation
+are typically applied after each convolutional layer within a dense block. <br>
+- **Transition Blocks:**
+Transition blocks are inserted between dense blocks. Their purpose is twofold:
+1. Dimensionality Reduction: They use a convolutional layer with a kernel size
+of 1x1 to reduce the number of feature channels. This helps control model
+complexity and prevent overfitting.
+2. Pooling: A pooling layer (often average pooling) is used to further reduce the
+spatial dimensions of the feature maps.
+Final Layers:
+1. Global Average Pooling: After the final dense block, a global average
+pooling layer is often used. This reduces the feature maps to a single vector,
+summarizing the information for classification.
+2. Fully-Connected Layer: A final fully-connected layer with a number of
+neurons equal to the number of image classes performs the classification task
