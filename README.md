@@ -353,4 +353,91 @@ Final Layers:
 pooling layer is often used. This reduces the feature maps to a single vector,
 summarizing the information for classification.
 2. Fully-Connected Layer: A final fully-connected layer with a number of
-neurons equal to the number of image classes performs the classification task
+neurons equal to the number of image classes performs the classification task <br>
+
+# RESULTS
+## 1 CLAHE Algorithm
+The application of the CLAHE (Contrast Limited Adaptive Histogram
+Equalization) algorithm to the set of Fundus images yielded significant
+improvements in image quality and contrast. This enhancement process contributed
+to the successful extraction of subtle details and features within the images,
+particularly within the retinal region. <br>
+The results showed that the CLAHE algorithm effectively mitigated issues
+related to poor lighting, uneven contrast, and variations in image quality encountered
+in Fundus images. As a consequence, the retinal structures and abnormalities
+associated with diabetic retinopathy became more discernible, facilitating a more
+precise analysis. <br>
+![Screenshot (208)](https://github.com/Mini-project4ppl/Major_Project/assets/132262814/2478a6da-ed6d-46a3-9603-25147bc5456b)  <br>
+
+In Fig 4.2, a series of images processed with CLAHE are showcased, each
+portraying varying levels of severity in Diabetic Retinopathy. These images serve as
+visual representations capturing the diverse manifestations and progression stages of
+the condition. Through the application of CLAHE, subtle nuances and distinct
+features indicative of different severity levels are brought to light, offering valuable
+insights into the diagnostic and prognostic aspects of Diabetic Retinopathy. This
+comprehensive collection of images not only highlights the multifaceted nature of
+the disease but also underscores the significance of advanced image processing
+techniques in enhancing understanding and management of retinal pathologies. <br>
+
+![Screenshot (209)](https://github.com/Mini-project4ppl/Major_Project/assets/132262814/259e6512-4ee8-4f45-bd18-8b560da057cf)  <br>
+## 2 GAN Technique
+### DCGAN Algorithm
+The trained DCGAN successfully generated a set of synthetic fundus images
+containing Diabetic Retinopathy (DR) from the input black and white images
+enhanced using CLAHE. The generated images demonstrate a remarkable level of
+visual fidelity and coherence, closely resembling the characteristics present in the
+original dataset. Through the iterative adversarial training process, the DCGAN
+effectively learned to capture intricate patterns and details inherent in the input
+images, resulting in the production of highly realistic outputs. <br>
+![Screenshot (210)](https://github.com/Mini-project4ppl/Major_Project/assets/132262814/c5624335-a3b0-4278-a1ee-c9ed72d75c80) <br>
+
+## 3 Densenet-201 Model
+The DenseNet-201 model was meticulously trained to classify Diabetic
+Retinopathy (DR) severity levels in fundus images, aiming to provide accurate and
+reliable diagnostic outcomes for early intervention and management of the disease. <br>
+The model demonstrated exceptional accuracy in classifying DR severity levels,
+boasting an overall high accuracy rate. Accuracy, in this context, refers to the
+model's ability to correctly categorize images into their respective severity
+categories, which include no DR, mild, moderate, severe, and proliferative DR. <br>
+The high accuracy rate indicates the effectiveness of the model in precisely
+identifying the presence and severity of DR in fundus images. This suggests that the
+model's learned features and decision-making process effectively capture the distinct
+patterns associated with different stages of the disease. <br>
+![Screenshot (211)](https://github.com/Mini-project4ppl/Major_Project/assets/132262814/643a51ff-217d-4214-8c80-fbb80c7a3aa9)  <br>
+
+## 4 Alexnet Model
+The AlexNet model was rigorously trained to classify Diabetic Retinopathy
+(DR) severity levels in fundus images, with the aim of facilitating accurate and
+timely diagnosis of the disease for effective patient management. <br>
+The model demonstrated commendable accuracy in classifying DR severity
+levels, achieving a high accuracy rate across various severity categories. Accuracy,
+a fundamental metric in classification tasks, reflects the model's ability to correctly
+classify images into their respective severity stages, spanning from no DR to
+proliferative DR, as depicted in Fig 4.7. The robust accuracy attained by the AlexNet
+model underscores its proficiency in capturing the nuanced features indicative of
+different stages of DR, thereby enabling precise diagnostic outcomes. <br>
+![Screenshot (213)](https://github.com/Mini-project4ppl/Major_Project/assets/132262814/ac37f77e-fb3e-456e-b8e1-9130688a7f5e)   <br>
+
+## 5 Comparative Study
+The project aimed to compare the performance of DenseNet and AlexNet
+models in classifying Diabetic Retinopathy (DR) severity levels in fundus images,
+with the objective of identifying the most effective model for accurate and reliable
+disease diagnosis and management. <br>
+Both the DenseNet and AlexNet architectures underwent rigorous training and
+evaluation processes using an identical dataset comprising fundus images depicting
+diverse severity levels of DR. Throughout the evaluation, the performance of each
+model was primarily gauged based on its accuracy in classifying these images
+accurately. Figure 4.8 provides a visual representation of how both models classified
+the severity levels depicted in the input images.  <br>
+![Screenshot (214)](https://github.com/Mini-project4ppl/Major_Project/assets/132262814/06f1861d-e26f-4014-9458-2fdf595689b0)
+
+
+## 6 User Interface
+Upon uploading a fundus image, the interface swiftly enhances it using the
+CLAHE algorithm and processes it through a pre-trained Densenet-201 model for
+DR classification. The detected severity level of DR is then displayed. Refer to
+Figure 4.10 for a visual representation of the interface. <br>
+
+
+![Screenshot (215)](https://github.com/Mini-project4ppl/Major_Project/assets/132262814/d74e1f7e-e1f7-4f62-b9cb-c5da86c47c18)
+
