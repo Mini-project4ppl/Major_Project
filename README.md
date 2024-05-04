@@ -19,6 +19,12 @@ posed by DR and improve patient outcomes.
 2. Implementation of DCGAN on Enhanced Images
 3. Using GAN-FID to Compare GAN Images
 4. Application of DENSENET-201 For Classification on CLAHE Images
-5. Comparison between Proposed Model (DENSENET-201) and Existing
-Model (ALEXNET)
+5. Comparison between Proposed Model (DENSENET-201) and Existing Model (ALEXNET)
+
+#  Methodology <br>
+- Image Enhancement
+- Data Augmentation
+- Classification using Deep Learning Models
+-   - DenseNet-201
+    - AlexNet
 <br>
