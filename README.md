@@ -249,5 +249,61 @@ The GAN and GAN FID modules work together to generate high-quality
 synthetic data that enhancesthe training dataset's diversity, ultimately contributing
 to improved model performance for tasks like Diabetic Retinopathy detection. The
 GAN FID module helps ensure that the synthetic data is of sufficient quality to
-benefit the training process.
+benefit the training process. <br>
+
+
+## 3 AlexNet Model
+1. Data Collection and Preprocessing:
+- Gather labelled retinal images: Obtain a dataset of retinal images annotated with
+diabetic retinopathy labels. This dataset should ideally be diverse and
+representative.
+- Resize, normalize, and augment images: Resize all images to a consistent
+resolution suitable for input into the neural network. Normalize pixel values to
+a range suitable for training. Augment the dataset by applying transformations
+like rotation, flipping, and cropping to increase robustness and generalization of
+the model.
+2. Model Architecture:
+- Implement AlexNet: Construct the AlexNet architecture using convolutional
+layers, max-pooling layers, and fully connected layers. Ensure proper
+configuration of filter sizes, strides, padding, and activation functions as
+specified in the original AlexNet paper.
+3. Training:
+- Split data into train, validation, and test sets: Divide the dataset into three distinct
+subsets: one for training the model, one for validating the model's performance
+during training, and one for evaluating the final trained model.
+- Train the model: Utilize Stochastic Gradient Descent (SGD) with momentum
+and learning rate scheduling to optimize the model's parameters. Monitor
+training progress using the validation set to prevent overfitting by adjusting
+hyperparameters or employing regularization techniques.
+
+4. Evaluation:
+- Evaluate model performance: Assess the trained model's performance using the
+test set, which the model has not seen during training or validation. Compute
+various evaluation metrics such as accuracy, precision, recall, and Area Under
+the ROC curve (AUC-ROC) to gauge its effectiveness in detecting diabetic
+retinopathy.
+5. Fine-Tuning and Optimization:
+- Fine-tune model architecture and hyperparameters: Experiment with different
+configurations of the model architecture, such as varying the number of layers
+or adjusting layer sizes, to improve performance. Tune hyperparameters such as
+learning rate, momentum, and regularization strength through systematic
+experimentation.
+- Consider transfer learning: Explore the possibility of leveraging pre-trained
+weights from models trained on large-scale image datasets like ImageNet to
+expedite training or enhance performance.
+6. Deployment:
+- Integrate the model: Embed the trained model into a web or mobile application,
+or deploy it on edge devices for real-time inference. Ensure compatibility with
+the target platform's hardware and software requirements.
+
+7. Monitoring and Maintenance:
+- Continuously monitor model performance: Deploy mechanisms to monitor the
+model's performance in production, including accuracy, latency, and resource
+utilization. Implement alerting systems to notify stakeholders of any anomalies
+or degradation in performance.
+- Retrain periodically: Periodically retrain the model on new data to adapt to
+changing patterns or distributions in the input data. Incorporate mechanisms for
+data collection, labelling, and retraining into the deployment pipeline to ensure
+the model remains effective over time.
+
 
